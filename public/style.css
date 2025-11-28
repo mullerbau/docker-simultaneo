@@ -20,7 +20,7 @@ h1 {
     color: #333;
 }
 
-input, button {
+input, button, select {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -38,6 +38,10 @@ button {
 
 button:hover {
     background: #0056b3;
+}
+
+select {
+    background: white;
 }
 
 a {

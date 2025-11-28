@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 app.post('/submit', async (req, res) => {
   try {
     const db = await getClient();
-    await db.query('INSERT INTO usuarios (nome, email) VALUES ($1, $2)', [req.body.nome, req.body.email]);
+    await db.query('INSERT INTO usuarios (nome, email, time) VALUES ($1, $2, $3)', [req.body.nome, req.body.email, req.body.time]);
     res.redirect('/');
   } catch (err) {
     res.status(500).send('Erro ao conectar com banco');
