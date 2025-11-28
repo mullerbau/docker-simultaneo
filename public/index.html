@@ -10,12 +10,14 @@
         <form method="POST" action="/submit">
             <input type="text" name="nome" placeholder="Digite seu nome" required>
             <input type="text" name="email" placeholder="Digite seu email" required>
-            <input type="select" name="time" required>
-                <option value="">Escolha seu time do coração</option>
-                <option value="PELOTAS">PELOTAS</option>
-                <option value="BRASIL">BRASIL</option>
-                <option value="CORINTHIANS(DEREK)">CORINTHIANS(DEREK)</option>
-            </select>
+            
+            <div class="radio-group">
+                <label>Time do coração:</label>
+                <label><input type="radio" name="time" value="PELOTAS" required> PELOTAS</label>
+                <label><input type="radio" name="time" value="BRASIL" required> BRASIL</label>
+                <label><input type="radio" name="time" value="CORINTHIANS(DEREK)" required> CORINTHIANS(DEREK)</label>
+            </div>
+            
             <button type="submit">Enviar</button>
         </form>
     </div>

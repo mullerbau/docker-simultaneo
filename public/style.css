@@ -40,8 +40,19 @@ button:hover {
     background: #0056b3;
 }
 
-select {
-    background: white;
+.radio-group {
+    margin: 15px 0;
+}
+
+.radio-group label {
+    display: block;
+    margin: 8px 0;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
 }
 
 a {
