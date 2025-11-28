@@ -1,0 +1,8 @@
+{
+  "name": "formulario-web",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.18.0",
+    "pg": "^8.8.0"
+  }
+}
