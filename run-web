@@ -1,0 +1,1 @@
+docker run -d --name web-container -p 3000:3000 -e DB_HOST=host.docker.internal minha-web

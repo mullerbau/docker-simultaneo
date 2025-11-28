@@ -1,27 +1,23 @@
 const express = require('express');
 const { Client } = require('pg');
+const path = require('path');
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 const client = new Client({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
+  host: process.env.DB_HOST || 'localhost',
+  port: process.env.DB_PORT || 5432,
+  database: process.env.DB_NAME || 'testdb',
+  user: process.env.DB_USER || 'user',
+  password: process.env.DB_PASSWORD || 'password',
 });
 
 client.connect();
 
 app.get('/', (req, res) => {
-  res.send(`
-    <form method="POST" action="/submit">
-      <input type="text" name="nome" placeholder="Nome" required>
-      <button type="submit">Enviar</button>
-    </form>
-    <a href="/dados">Ver dados</a>
-  `);
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.post('/submit', async (req, res) => {
